@@ -1,21 +1,21 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Meet Together",
+  "name": "Project for the DubHacks 2023 Hackathon.",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "128x128 64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "meet-together.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "1000x1000"
     },
     {
-      "src": "logo512.png",
+      "src": "me2-favicon.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "1000x1000"
     }
   ],
   "start_url": ".",
