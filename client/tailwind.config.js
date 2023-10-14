@@ -8,7 +8,22 @@ module.exports = {
     "./src/index.css"
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+        'primary': '#FFFFFF',
+        'secondary': '#E8E8E8',
+        'third': '#1E1E1E'
+      },
+      borderColor: {
+        'primary': '#1E1E1E'
+      },
+      spacing: {
+        '25': '10rem'
+      },
+      borderWidth: {
+        '5': '0.15rem'
+      }
+    },
   },
   plugins: [],
 }
