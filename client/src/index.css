@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap');
+
+body {
+  font-family: 'Barlow', sans-serif;
+}
+
+#app > div {
+  min-width: 500px;
+}
+
+#app hr {
+  min-width: 500px;
+}
+
+.active {
+  color: #485340;
+  background-color: #dcf5cb;
+}
+
+.inactive {
+  color: #acacac;
+  background-color: #727272;
+}
+
+@keyframes dotAnimation {
+  0%, 100% {
+    content: '...';
+  }
+  75% {
+    content: '.. ';
+  }
+  50% {
+    content: '.  ';
+  }
+  25% {
+    content: '   ';
+  }
+}
+
+.animate-dots::after {
+  content: '...';
+  animation: dotAnimation 1s steps(4) infinite;
+  display: inline-block;
+  width: 1em; /* Adjust as needed */
+}
