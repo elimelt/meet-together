@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ReactSortable } from "react-sortablejs";
 import { active } from "sortablejs";
+import { Link } from 'react-router-dom';
 
 const group = () => {
   return (
@@ -11,15 +12,8 @@ const group = () => {
 }
 
 export const Sort = (props) => {
-  const [data, setData] = useState([
-    { id: 1, name: 'elijah', active: true},
-    { id: 2, name: 'sriya', active: true},
-    { id: 3, name: 'rasmus', active: true},
-    { id: 4, name: 'simon', active: true},
-    { id: 5, name: 'max', active: true},
-    { id: 6, name: 'bella', active: true},
-    { id: 7, name: 'turner', active: true}
-  ]);
+  const { list } = props;
+  const [data, setData] = useState(list);
   const [loading, setLoading] = useState(false);
 
   let lastActive = data.length;
@@ -37,9 +31,16 @@ export const Sort = (props) => {
 
   return (
     <div id="fields" className="">
-      <p className="text-3xl text-center m-5">
-        Drag & drop to rank the fields.
-      </p>
+      <div className="flex items-center">
+        <p className="m-5 ml-28 text-3xl text-center flex-1">
+          Drag & drop to rank the fields.
+        </p>
+        <div className="ml-auto">
+          <Link to="/groups">
+            <button type="button" className="bg-secondary h-12 pl-5 pr-5 mr-2 hover:bg-darker transition duration-50 ease-in-out">Submit</button>
+          </Link>
+        </div>
+      </div>
       <ReactSortable className="flex flex-col flex-wrap items-center" list={data} setList={setData}>
         {data.map((item, i) => {
           let activeClass;
