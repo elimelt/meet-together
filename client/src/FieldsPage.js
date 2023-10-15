@@ -2,14 +2,6 @@ import React, { useState, useEffect } from "react";
 import { ReactSortable } from "react-sortablejs";
 import { Link } from 'react-router-dom';
 
-const group = () => {
-  return (
-    <div className="group">
-      djsahdjsahdjasdkdka
-    </div>
-  )
-}
-
 export const Sort = (props) => {
   const { formData, setFormData } = props;
   const [loading, setLoading] = useState(false);
@@ -18,6 +10,24 @@ export const Sort = (props) => {
     let i = 0;
     while (formData[i].active) i++;
     return i;
+  }
+
+  function getWeights() {
+    let sum = 0;
+    let counter = 1;
+    for (let i = 0; i < formData.length; i++) {
+      if (formData[i].active) {
+        sum += counter;
+        counter++;
+      }
+    }
+    counter = 1;
+    for (let i = formData.length - 1; i >= 0; i--) {
+      if (formData[i].active) {
+        formData[i].weight = counter / sum;
+        counter++;
+      }
+    }
   }
 
   const activate = i => {
@@ -65,11 +75,11 @@ export const Sort = (props) => {
     <div id="fields" className="">
       <div className="flex items-center">
         <p className="m-5 ml-28 text-3xl text-center flex-1">
-          Drag & drop to rank the fields.
+          Drag & drop to rank your form's questions by importance!
         </p>
         <div className="ml-auto">
           <Link to="/groups">
-            <button type="button" className="bg-secondary h-12 pl-5 pr-5 mr-2 hover:bg-darker transition duration-50 ease-in-out">Submit</button>
+            <button type="button" className="bg-secondary h-12 pl-5 pr-5 mr-2 hover:bg-darker transition duration-50 ease-in-out" onClick={getWeights}>Submit</button>
           </Link>
         </div>
       </div>
