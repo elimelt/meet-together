@@ -11,25 +11,25 @@ const group = () => {
 }
 
 export const Sort = (props) => {
-  const { data, setData } = props;
+  const { formData, setFormData } = props;
   const [loading, setLoading] = useState(false);
 
   const findLastActive = () => {
     let i = 0;
-    while (data[i].active) i++;
+    while (formData[i].active) i++;
     return i;
   }
 
   const activate = i => {
     let firstInactiveIdx = findLastActive();
-    const act = data.slice(0, firstInactiveIdx)
+    const act = formData.slice(0, firstInactiveIdx)
 
     const inact = [
-        ...data.slice(firstInactiveIdx, i),
-        ...data.slice(i + 1, data.length)
+        ...formData.slice(firstInactiveIdx, i),
+        ...formData.slice(i + 1, formData.length)
     ];
 
-    const updated = data[i];
+    const updated = formData[i];
     updated.active = true;
 
     const newArray = [
@@ -38,28 +38,28 @@ export const Sort = (props) => {
         ...inact
     ]
 
-    setData(newArray);
+    setFormData(newArray);
   }
 
   const deactivate = i => {
     const newArray = [
-        ...data.slice(0, i), 
-        ...data.slice(i + 1, data.length),
-        data[i]
+        ...formData.slice(0, i),
+        ...formData.slice(i + 1, formData.length),
+        formData[i]
     ];
 
     newArray[newArray.length - 1].active = false;
 
-    setData(newArray);
+    setFormData(newArray);
   }
 
   const toggle = i => {
-    data[i].active ? deactivate(i) : activate(i);
+    formData[i].active ? deactivate(i) : activate(i);
   }
 
   useEffect(() => {
     setLoading(!loading)
-  }, [data])
+  }, [formData])
 
   return (
     <div id="fields" className="">
@@ -73,9 +73,9 @@ export const Sort = (props) => {
           </Link>
         </div>
       </div>
-    
-      {/* if data is loading, show loading text */}
-      {(data.length !== 0) ? <></> :
+
+      {/* if formData is loading, show loading text */}
+      {(formData.length !== 0) ? <></> :
         <div className="flex justify-center">
           <p className="mt-16 text-3xl animate-dots">
             Loading
@@ -83,9 +83,9 @@ export const Sort = (props) => {
         </div>
       }
 
-      <ReactSortable className="flex flex-col flex-wrap items-center" list={data} setList={setData}>
+      <ReactSortable className="flex flex-col flex-wrap items-center" list={formData} setList={setFormData}>
 
-        {data.map((item, i) => {
+        {formData.map((item, i) => {
           let activeClass;
           if (item.active) { activeClass = ' active'}
           else { activeClass = ' inactive' }

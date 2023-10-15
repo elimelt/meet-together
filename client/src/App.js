@@ -20,16 +20,18 @@ const list = [];
 // ];
 
 function App() {
-  const [data, setData] = useState([])
+  const [formData, setFormData] = useState([])
+  const [responseData, setResponseData] = useState([])
+
   const dataGroups = [{name: 'rasmus@uw.edu'}, {name: 'bulusu@uw.edu'}, {name: 'elimelt@uw.edu'}, {name: 'simku22@uw.edu'}]
   return (
     <div id="app" className='ml-25 mr-25 flex flex-col h-screen'>
       <BrowserRouter>
-        <Header setData={setData}/>
+        <Header setFormData={setFormData}/>
         <Routes>
-          <Route path="/" element={<FormInput setData={setData} />} />
+          <Route path="/" element={<FormInput setFormData={setFormData} />} />
           <Route path="/about" element={<About />} />
-          <Route path='/fields' element={<Sort data={data} setData={setData} />} />
+          <Route path='/fields' element={<Sort formData={formData} setFormData={setFormData} />} />
           <Route path='/groups' element={<Groups data={dataGroups} />} />
         </Routes>
         <Footer />
