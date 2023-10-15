@@ -18,7 +18,8 @@ module.exports = {
         'primary': '#1E1E1E'
       },
       spacing: {
-        '25': '10rem'
+        '25': '10rem',
+        '50': '500rem'
       },
       borderWidth: {
         '5': '0.15rem'
@@ -26,7 +27,8 @@ module.exports = {
       colors: {
         'primary': '#FFFFFF',
         'secondary': '#E8E8E8',
-        'third': '#1E1E1E'
+        'third': '#1E1E1E',
+        'darker': '#CFCFCF'
       }
     },
   },
