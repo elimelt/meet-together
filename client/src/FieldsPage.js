@@ -12,6 +12,24 @@ export const Sort = (props) => {
     return i;
   }
 
+  function getWeights() {
+    let sum = 0;
+    let counter = 1;
+    for (let i = 0; i < formData.length; i++) {
+      if (formData[i].active) {
+        sum += counter;
+        counter++;
+      }
+    }
+    counter = 1;
+    for (let i = formData.length - 1; i >= 0; i--) {
+      if (formData[i].active) {
+        formData[i].weight = counter / sum;
+        counter++;
+      }
+    }
+  }
+
   const activate = i => {
     let firstInactiveIdx = findLastActive();
     const act = formData.slice(0, firstInactiveIdx)
@@ -61,7 +79,7 @@ export const Sort = (props) => {
         </p>
         <div className="ml-auto">
           <Link to="/groups">
-            <button type="button" className="bg-secondary h-12 pl-5 pr-5 mr-2 hover:bg-darker transition duration-50 ease-in-out">Submit</button>
+            <button type="button" className="bg-secondary h-12 pl-5 pr-5 mr-2 hover:bg-darker transition duration-50 ease-in-out" onClick={getWeights}>Submit</button>
           </Link>
         </div>
       </div>
