@@ -1,21 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { ReactSortable } from "react-sortablejs";
+import { active } from "sortablejs";
+import { Link } from 'react-router-dom';
 
+const group = () => {
+  return (
+    <div className="group">
+      djsahdjsahdjasdkdka
+    </div>
+  )
+}
 
-export default function Sort(props) {
-  const [data, setData] = useState([
-    { id: 1, name: 'elijah', active: true},
-    { id: 2, name: 'sriya', active: true},
-    { id: 3, name: 'rasmus', active: true},
-    { id: 4, name: 'simon', active: true},
-  ]);
+export const Sort = (props) => {
+  const { list } = props;
+  const [data, setData] = useState(list);
   const [loading, setLoading] = useState(false);
 
-   let lastActive = data.length;
+  let lastActive = data.length;
 
   const toggle = i => {
     const newActiveArray = [...data];
-    newActiveArray[i].active 
+    newActiveArray[i].active = !newActiveArray[i].active;
     // const element = arr.splice(index, 1)[0];
     //arr.push(element);
   }
@@ -25,29 +30,29 @@ export default function Sort(props) {
   }, [data])
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          drag & drop to rank elements!
+    <div id="fields" className="">
+      <div className="flex items-center">
+        <p className="m-5 ml-28 text-3xl text-center flex-1">
+          Drag & drop to rank the fields.
         </p>
-        <ReactSortable list={data} setList={setData}>
-          {data.map((item, i) => {
-            if (item.active) {
-              return (
-              <div className="flex w-1/2 active" key={item.id}>
-                <p>{item.name}</p>
-                <button className="active w-14 h-14 text-center text-sm border-0" onClick={() => toggle(i)}>×</button>
-              </div>
-              )
-            } else {
-              return (<div className="flex inactive" key={item.id}>
-                <p>{item.name}</p>
-                <button className="inactive w-14 h-14 text-center text-sm border-0" onClick={() => toggle(i)}>×</button>
-                </div>)
-            }
-          })}
-        </ReactSortable>
-      </header>
+        <div className="ml-auto">
+          <Link to="/groups">
+            <button type="button" className="bg-secondary h-12 pl-5 pr-5 mr-2 hover:bg-darker transition duration-50 ease-in-out">Submit</button>
+          </Link>
+        </div>
+      </div>
+      <ReactSortable className="flex flex-col flex-wrap items-center" list={data} setList={setData}>
+        {data.map((item, i) => {
+          let activeClass;
+          if (item.active) { activeClass = ' active'}
+          else { activeClass = ' inactive' }
+          return (
+            <div className={"flex m-3 items-center w-1/4 " + activeClass} key={item.id}>
+              <p className="ml-5">{item.name}</p>
+              <button className="ml-auto w-14 h-14 text-center text-3xl border-0" onClick={() => toggle(i)}>×</button>
+            </div>)
+        })}
+      </ReactSortable>
     </div>
   )
 }
