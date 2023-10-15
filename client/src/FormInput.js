@@ -25,7 +25,6 @@ const getFormID = async (setFormData, setResponseData) => {
       return newElement;
     })
     setFormData(newMetadata);
-    setResponseData(responses);
   } else {
     console.log("Form ID not found in the URL.");
   }

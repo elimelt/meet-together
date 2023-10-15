@@ -10,6 +10,7 @@ import { Groups } from './Groups.js';
 function App() {
   const [formData, setFormData] = useState([])
   const [responseData, setResponseData] = useState([])
+  const [weights, setWeights] = useState([])
 
   return (
     <div id="app" className='ml-25 mr-25 flex flex-col h-screen'>
@@ -18,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<FormInput setFormData={setFormData} setResponseData={setResponseData} />} />
           <Route path="/about" element={<About />} />
-          <Route path='/fields' element={<Sort formData={formData} setFormData={setFormData} />} />
+          <Route path='/fields' element={<Sort formData={formData} setWeights={setWeights} setFormData={setFormData} />} />
           <Route path='/groups' element={<Groups responseData={responseData} />} />
         </Routes>
         <Footer />
