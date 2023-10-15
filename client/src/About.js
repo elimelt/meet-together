@@ -4,8 +4,8 @@ export const About = () => {
       <h1 className="text-6xl font-bold m-4">
         MEET TOGETHER
       </h1>
-      <p className="text-center m-4">
-        With our innovative matching algorithm, we make it easy for users to build their communities by leveraging form data and assigning priority to ideas that matter, ensuring personalized and engaging group dynamics. Join us to effortlessly create connections that matter!
+      <p className="text-center m-4 w-3/5 text-lg">
+        With our innovative matching algorithm, we make it easy for users to explore their communities by leveraging form data and assigning priority to ideas that matter, ensuring personalized and engaging group dynamics.
       </p>
       <div className="container mx-auto flex flex-wrap justify-center">
         <div className="flex w-96 m-5 items-center border border-black-800 rounded-lg shadow dark:bg-white-800">

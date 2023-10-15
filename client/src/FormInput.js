@@ -34,7 +34,7 @@ export const FormInput = (props) => {
   return (
     <div>
       <h1 className='text-4xl text-center m-5 mb-5 mt-16 font-bold'>INPUT YOUR FORM</h1>
-      <p className='text-center text-lg mb-8'>And we will make the magic happen!</p>
+      <p className='text-center text-lg mb-8'>And we will make the magic happen! 🪄</p>
       <div className="bg-secondary w-3/5 h-20 m-auto flex flex-row items-center">
         <input id='input' className="border-radius-1 w-full text-lg ml-5 focus:outline-none bg-gradient-to-r from-black via-black via-black via-black to-secondary text-transparent bg-clip-text" type="text" placeholder="link here..."></input>
         <Link className='h-full' to="/fields">

@@ -21,7 +21,7 @@ const list = [];
 
 function App() {
   const [data, setData] = useState([])
-
+  const dataGroups = [{name: 'rasmus@uw.edu'}, {name: 'bulusu@uw.edu'}, {name: 'elimelt@uw.edu'}, {name: 'simku22@uw.edu'}]
   return (
     <div id="app" className='ml-25 mr-25 flex flex-col h-screen'>
       <BrowserRouter>
@@ -30,7 +30,7 @@ function App() {
           <Route path="/" element={<FormInput setData={setData} />} />
           <Route path="/about" element={<About />} />
           <Route path='/fields' element={<Sort data={data} setData={setData} />} />
-          <Route path='/groups' element={<Groups />} />
+          <Route path='/groups' element={<Groups data={dataGroups} />} />
         </Routes>
         <Footer />
       </BrowserRouter>
