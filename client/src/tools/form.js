@@ -50,45 +50,79 @@ export async function getFormResponses(formID) {
 
 const formID = "1COaD0aW1PwPEj2tW4QtQ_IRY3JPK0kc5BulEK8GjADk";
 
-// Fetch form metadata and responses concurrently using Promise.all
-Promise.all([getFormMetadata(formID), getFormResponses(formID)])
-  .then(([metadata, formData]) => {
-    // Process metadata
-    const processedMetadata = metadata.items.map((question) => {
-      return {
-        title: question.title || "",
-        id: (
-          question.questionItem &&
-          question.questionItem.question &&
-          question.questionItem.question.questionId
-        ),
-        type: (
-          question.questionItem &&
+export const processedMetadata = (metadata) => {
+  return metadata.items.map((question) => {
+    return {
+      title: question.title || "",
+      id: (
+        question.questionItem &&
+        question.questionItem.question &&
+        question.questionItem.question.questionId
+      ),
+      type: (
+        question.questionItem &&
+        question.questionItem.question &&
+        question.questionItem.question.choiceQuestion &&
+        question.questionItem.question.choiceQuestion.type
+      ) || "",
+      options: (
+        (question.questionItem &&
           question.questionItem.question &&
           question.questionItem.question.choiceQuestion &&
-          question.questionItem.question.choiceQuestion.type
-        ) || "",
-        options: (
-          (question.questionItem &&
-            question.questionItem.question &&
-            question.questionItem.question.choiceQuestion &&
-            question.questionItem.question.choiceQuestion.options) || []
-        ).map((e) => e.value),
-      };
-    });
+          question.questionItem.question.choiceQuestion.options) || []
+      ).map((e) => e.value),
+    };
+  });
+}
 
-    const processedFormdata = formData.responses.map((response) => {
-      return {
-        title: response.respondentEmail || "",
-        options: response.answers,
-      };
-    });
+export const processedFormdata = (formData) => {
+  return formData.responses.map((response) => {
+    return {
+      title: response.respondentEmail || "",
+      options: response.answers,
+    };
+  });
+}
 
-    console.log("Meta Data:", processedMetadata);
-    console.log("Form Data:", processedFormdata);
-  })
-  .catch((error) => {
-    // Handle errors here
-    console.error("Error:", error);
-  }
-);
+// Fetch form metadata and responses concurrently using Promise.all
+// Promise.all([getFormMetadata(formID), getFormResponses(formID)])
+//   .then(([metadata, formData]) => {
+//     // Process metadata
+//     const processedMetadata = metadata.items.map((question) => {
+//       return {
+//         title: question.title || "",
+//         id: (
+//           question.questionItem &&
+//           question.questionItem.question &&
+//           question.questionItem.question.questionId
+//         ),
+//         type: (
+//           question.questionItem &&
+//           question.questionItem.question &&
+//           question.questionItem.question.choiceQuestion &&
+//           question.questionItem.question.choiceQuestion.type
+//         ) || "",
+//         options: (
+//           (question.questionItem &&
+//             question.questionItem.question &&
+//             question.questionItem.question.choiceQuestion &&
+//             question.questionItem.question.choiceQuestion.options) || []
+//         ).map((e) => e.value),
+//       };
+//     });
+
+//     const processedFormdata = formData.responses.map((response) => {
+//       return {
+//         title: response.respondentEmail || "",
+//         options: response.answers,
+//       };
+//     });
+
+//     console.log("Meta Data:", processedMetadata);
+//     console.log("Form Data:", processedFormdata);
+//   })
+//   .catch((error) => {
+//     // Handle errors here
+//     console.error("Error:", error);
+//   }
+// );

@@ -12,8 +12,7 @@ const group = () => {
 }
 
 export const Sort = (props) => {
-  const { list } = props;
-  const [data, setData] = useState(list);
+  const { data, setData } = props;
   const [loading, setLoading] = useState(false);
 
   let lastActive = data.length;
@@ -41,6 +40,7 @@ export const Sort = (props) => {
           </Link>
         </div>
       </div>
+      {/* {if (data.length === 0) ? ()}} */}
       <ReactSortable className="flex flex-col flex-wrap items-center" list={data} setList={setData}>
         {data.map((item, i) => {
           let activeClass;
