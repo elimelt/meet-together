@@ -11,9 +11,7 @@ export const About = () => {
         <div className="flex w-96 m-5 items-center border border-black-800 rounded-lg shadow dark:bg-white-800">
           <img className="w-32 m-5 rounded-full" src="1626381484197.jpeg" alt="" />
           <div className="p-5">
-            <a href="#">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Elijah Melton</h5>
-            </a>
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Elijah Melton</h5>
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Developer</p>
             <a className="" href="https://www.linkedin.com/in/elijah-melton/" target="_blank" rel="noopener noreferrer">
               <svg className="transform hover:scale-110 transition-transform" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
@@ -25,9 +23,7 @@ export const About = () => {
         <div className="flex w-96  m-5 items-center border border-black-800 rounded-lg shadow dark:bg-white-800">
           <img className="w-32 m-5 rounded-full" src="1683761580417.jpeg" alt="" />
           <div className="p-5">
-            <a href="#">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Simon Kurgan</h5>
-            </a>
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Simon Kurgan</h5>
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Developer</p>
             <a className="" href="https://www.linkedin.com/in/simon-kurgan/" target="_blank" rel="noopener noreferrer">
               <svg className="transform hover:scale-110 transition-transform" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
@@ -39,9 +35,7 @@ export const About = () => {
         <div className="flex w-96  m-5 items-center border border-black-800 rounded-lg shadow dark:bg-white-800">
           <img className="w-32 m-5 rounded-full" src="1683243742157.jpeg" alt="" />
           <div className="p-5">
-            <a href="#">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Sriya Bulusu</h5>
-            </a>
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Sriya Bulusu</h5>
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Developer</p>
             <a className="" href="https://www.linkedin.com/in/sriyabulusu/" target="_blank" rel="noopener noreferrer">
               <svg className="transform hover:scale-110 transition-transform" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
@@ -53,9 +47,7 @@ export const About = () => {
         <div className="flex w-96 m-5 items-center border border-black-800 rounded-lg shadow dark:bg-white-800">
           <img className="w-32 m-5 rounded-full" src="1678155107045.jpeg" alt="" />
           <div className="p-5">
-            <a href="#">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Rasmus Makiniemi</h5>
-            </a>
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Rasmus Makiniemi</h5>
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Developer</p>
             <a className="" href="https://www.linkedin.com/in/rasmus-makiniemi/" target="_blank" rel="noopener noreferrer">
               <svg className="transform hover:scale-110 transition-transform" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
