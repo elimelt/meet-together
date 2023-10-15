@@ -55,19 +55,13 @@ async function getFormMetadata(formID) {
     .then(([metadata, formData]) => {
       // Process metadata
       const processedMetadata = metadata.items.map((question) => {
-        console.log(
-          JSON.stringify(
-            (
-              question &&
-              question.questionItem &&
-              question.questionItem.question &&
-              question.questionItem.question.choiceQuestion &&
-              question.questionItem.question.choiceQuestion.options
-            )
-          )
-        );
         return {
           title: question.title || "",
+          id: (
+            question.questionItem &&
+            question.questionItem.question &&
+            question.questionItem.question.questionId
+          ),
           type: (
             question.questionItem &&
             question.questionItem.question &&
@@ -82,13 +76,18 @@ async function getFormMetadata(formID) {
           ).map((e) => e.value),
         };
       });
-  
-      // Log the processed metadata and form data
+
+      const processedFormdata = formData.responses.map((response) => {
+        return {
+          title: response.respondentEmail || "",
+          options: response.answers,
+        };
+      });
+      
       console.log("Meta Data:", processedMetadata);
-      console.log("Form Data:", formData);
+      console.log("Form Data:", processedFormdata);
     })
     .catch((error) => {
       // Handle errors here
       console.error("Error:", error);
     });
-  // hello
