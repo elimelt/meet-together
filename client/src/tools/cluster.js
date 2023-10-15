@@ -13,29 +13,45 @@ function getRandomCentroids (data, k) {
       centroids.push(randomCentroid)
     }
   }
+
+  console.log('random centroids', centroids)
   return centroids
 }
 
 function assignToClusters (data, centroids) {
   const clusters = new Array(centroids.length).fill().map(() => [])
+
+  //console.log('centroids', centroids)
   for (const point of data) {
     const distances = centroids.map(centroid =>
       euclideanDistance(point, { val: centroid })
     )
-    const closestCentroidIndex = distances.indexOf(Math.min(...distances))
-    clusters[closestCentroidIndex].push(point)
+    const filteredDistances = distances.map(dist => isNaN(dist) ? 0 : dist);
+    const minIndex = filteredDistances.indexOf(Math.min(...filteredDistances))
+    clusters[minIndex].push(point)
   }
   return clusters
 }
 
 function calculateCentroids (clusters) {
-  return clusters.map(cluster => {
-    const clusterSize = cluster.length
-    const clusterSum = cluster.reduce((acc, point) => {
+  console.log('clusters leading to', clusters);
+
+  const sumPoints = clusters.map(cluster => {
+    const sumPoint = cluster.reduce((acc, point) => {
       return acc.map((dim, index) => dim + point.val[index])
-    }, new Array(cluster[0].val.length).fill(0))
-    return clusterSum.map(val => val / clusterSize)
+    }
+    , new Array(cluster[0].val.length).fill(0))
+    return sumPoint
+
   })
+
+  const clusterSizes = clusters.map(cluster => cluster.length)
+
+  const centroids = sumPoints.map((sumPoint, i) => sumPoint.map(val => val / clusterSizes[i]))
+
+  console.log('these', centroids)
+  return centroids
+
 }
 
 function kMeans (data, k, maxIterations = 20) {
@@ -49,6 +65,9 @@ function kMeans (data, k, maxIterations = 20) {
         JSON.stringify(centroid) === JSON.stringify(prevCentroids[i])
     )
   ) {
+
+    console.log('centroid', centroids)
+
     prevCentroids = centroids.map(centroid => [...centroid])
     const clusters = assignToClusters(data, centroids)
     centroids = calculateCentroids(clusters)
@@ -218,35 +237,35 @@ const rankPopularity = rankings => {
 const clusterItAll = (k, data, weights) => {
   const clusters = clusterFeatures(k, data)
 
-  console.log('step 1')
+  ////console.log('step 1')
 
   const groupSets = parseClustersIntoGroupSets(clusters)
 
-    console.log('step 2')
+    ////console.log('step 2')
 
   const dataMap = parseDataMap(data)
 
-    console.log('step 3')
+    ////console.log('step 3')
 
   const ids = data.map(entity => entity.id)
 
-    console.log('step 4')
+    ////console.log('step 4')
 
   const rankings = calcRankings(groupSets, weights, ids)
 
-    console.log('step 5')
+    ////console.log('step 5')
 
   const sortedRankings = sortRankings(rankings)
 
-    console.log('step 6')
+    ////console.log('step 6')
 
   const popIndicies = rankPopularity(rankings)
 
-    console.log('step 7')
+    ////console.log('step 7')
 
   const finalGroups = createFinalGroups(popIndicies, sortedRankings, k)
 
-    console.log('step 8')
+    ////console.log('step 8')
 
   const output = []
 

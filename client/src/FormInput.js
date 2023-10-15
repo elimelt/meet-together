@@ -13,8 +13,12 @@ const getFormID = async (setFormData, setResponseData, formId) => {
   const regex = /\/[ed]\/([^/]+)\/viewform/;
   const match = url.match(regex);
 
-  if (match) {
-    const newFormId = match[1];
+  const parts = url.split('/');
+  console.log(parts[5])
+
+  if (match || true) {
+    // const newFormId = match[1];
+    const newFormId = parts[5];
     const metadata = processMetadata(await getMetadata(newFormId));
     const responses = processResponses(await getResponses(newFormId));
 

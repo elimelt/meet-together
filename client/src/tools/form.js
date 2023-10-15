@@ -1,7 +1,7 @@
 import { clusterItAll } from './cluster.js'
 
 const aT =
-  'ya29.a0AfB_byABpoof-4sL3vMy9DeGrxfdT3CiHsP5sidmziygQhw0TSZenqrOjsEjRfxMV_V_vSBS9dHj60qYw8Sw5BCwN_wVV3G2udKNyseaYac0eJVfIWmSPeHeeiSo2OJcVDSQwu3yLLaYE0V6XF1qP7PoG74U9sm4d5LyaCgYKAWsSARESFQGOcNnCkq2D30-wOAsHN4YoTwPxng0171'
+  'ya29.a0AfB_byDSjo7AlJXTrG2RtTiHIoClBcHGypM_Hi5BE8k8Y3rFFtQMajg9t29mj1R3URj2bG87Q9LPPZ5NqFm_-QKT4H5Ub-xXXYFZjqgk0YxcHAJ4fPmIIdXOaIIWt1beebUWNUXSLmrFCmotMQtxbCDsJinQNr4mlSxyaCgYKAQcSARESFQGOcNnCRInwdYSn5ETuZgP2Zi3sXA0171'
 async function getFormMetadata (formID, accessToken = aT) {
   const apiUrl = `https://forms.googleapis.com/v1/forms/${formID}`
 
@@ -252,10 +252,10 @@ const finalFormatting = data => {
   return output
 }
 
-const accessToken =
-  'ya29.a0AfB_byABpoof-4sL3vMy9DeGrxfdT3CiHsP5sidmziygQhw0TSZenqrOjsEjRfxMV_V_vSBS9dHj60qYw8Sw5BCwN_wVV3G2udKNyseaYac0eJVfIWmSPeHeeiSo2OJcVDSQwu3yLLaYE0V6XF1qP7PoG74U9sm4d5LyaCgYKAWsSARESFQGOcNnCkq2D30-wOAsHN4YoTwPxng0171'
+// const accessToken =
+//   'ya29.a0AfB_byABpoof-4sL3vMy9DeGrxfdT3CiHsP5sidmziygQhw0TSZenqrOjsEjRfxMV_V_vSBS9dHj60qYw8Sw5BCwN_wVV3G2udKNyseaYac0eJVfIWmSPeHeeiSo2OJcVDSQwu3yLLaYE0V6XF1qP7PoG74U9sm4d5LyaCgYKAWsSARESFQGOcNnCkq2D30-wOAsHN4YoTwPxng0171'
 async function clusterFormData (formID, k, weights) {
-  const meta = await getFormMetadata(formID, accessToken)
+  const meta = await getFormMetadata(formID)
 
   const questionIdMap = getQuestionIdToItemIdMap(meta)
 
@@ -263,7 +263,7 @@ async function clusterFormData (formID, k, weights) {
   const optionsData = parseQuestionOptions(meta, questionTypes)
   const numericalData = numerizeOptionSpace(optionsData)
 
-  const res = await getFormResponses(formID, accessToken)
+  const res = await getFormResponses(formID)
   const responses = parseResponses(
     res,
     questionTypes,
