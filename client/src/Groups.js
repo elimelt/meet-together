@@ -51,7 +51,7 @@ export const Groups = (props) => {
     <>
       <div className="flex justify-center items-center m-5">
         <h1 className="text-3xl">Enter the amount of groups:</h1>
-        <input id="k-groups" min='1' max={100} type='number' maxLength={3} className="h-10 w-16 ml-4 mt-2 bg-secondary p-2 focus:outline-none" />
+        <input id="k-groups" min='1' max={responseData.length - 1} type='number' maxLength={3} className="h-10 w-16 ml-4 mt-2 bg-secondary p-2 focus:outline-none" />
         <button onClick={() => { populateGroups(responseData, setGroupData, formId.current, weights) }} type="button" className="bg-secondary h-10 pl-5 pr-5 mt-2 ml-4 hover:bg-darker transition duration-50 ease-in-out">Submit</button>
       </div>
       <div id="group" className="flex flex-wrap justify-center items-start">
