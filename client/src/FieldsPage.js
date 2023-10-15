@@ -2,14 +2,6 @@ import React, { useState, useEffect } from "react";
 import { ReactSortable } from "react-sortablejs";
 import { Link } from 'react-router-dom';
 
-const group = () => {
-  return (
-    <div className="group">
-      djsahdjsahdjasdkdka
-    </div>
-  )
-}
-
 export const Sort = (props) => {
   const { formData, setFormData } = props;
   const [loading, setLoading] = useState(false);
@@ -65,7 +57,7 @@ export const Sort = (props) => {
     <div id="fields" className="">
       <div className="flex items-center">
         <p className="m-5 ml-28 text-3xl text-center flex-1">
-          Drag and drop your different fields <em>(rank them)</em>
+          Drag & drop to rank your form's questions by importance!
         </p>
         <div className="ml-auto">
           <Link to="/groups">
