@@ -1,8 +1,7 @@
 import { clusterItAll } from './cluster.js'
 
 const aT =
-  'ya29.a0AfB_byDxf_RQND6YU3FfcYGwTbASoujHJCyEUrisg7bxAR0TSUCeuGVsuXUEUsVUWkojMmay_EKBSEjZs385oTvmr9Ejd3t9s9lSlBNpWl0nXcPGUp5Jo_8g7bhO-gEQTeJ8frztbpYIPhOd9tYOqGoIk3BC27e0ScrVaCgYKAdsSARESFQGOcNnCfLUXOP6kEu6DJVLds4I07A0171'
-
+  'ya29.a0AfB_byABpoof-4sL3vMy9DeGrxfdT3CiHsP5sidmziygQhw0TSZenqrOjsEjRfxMV_V_vSBS9dHj60qYw8Sw5BCwN_wVV3G2udKNyseaYac0eJVfIWmSPeHeeiSo2OJcVDSQwu3yLLaYE0V6XF1qP7PoG74U9sm4d5LyaCgYKAWsSARESFQGOcNnCkq2D30-wOAsHN4YoTwPxng0171'
 async function getFormMetadata (formID, accessToken = aT) {
   const apiUrl = `https://forms.googleapis.com/v1/forms/${formID}`
 
@@ -254,8 +253,7 @@ const finalFormatting = data => {
 }
 
 const accessToken =
-  'ya29.a0AfB_byDxf_RQND6YU3FfcYGwTbASoujHJCyEUrisg7bxAR0TSUCeuGVsuXUEUsVUWkojMmay_EKBSEjZs385oTvmr9Ejd3t9s9lSlBNpWl0nXcPGUp5Jo_8g7bhO-gEQTeJ8frztbpYIPhOd9tYOqGoIk3BC27e0ScrVaCgYKAdsSARESFQGOcNnCfLUXOP6kEu6DJVLds4I07A0171'
-
+  'ya29.a0AfB_byABpoof-4sL3vMy9DeGrxfdT3CiHsP5sidmziygQhw0TSZenqrOjsEjRfxMV_V_vSBS9dHj60qYw8Sw5BCwN_wVV3G2udKNyseaYac0eJVfIWmSPeHeeiSo2OJcVDSQwu3yLLaYE0V6XF1qP7PoG74U9sm4d5LyaCgYKAWsSARESFQGOcNnCkq2D30-wOAsHN4YoTwPxng0171'
 async function clusterFormData (formID, k, weights) {
   const meta = await getFormMetadata(formID, accessToken)
 
