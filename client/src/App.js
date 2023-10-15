@@ -6,6 +6,7 @@ import { FormInput } from './FormInput.js';
 import { About } from './About.js';
 import { Sort } from './FieldsPage.js';
 import { Groups } from './Groups.js';
+import { radioParser} from './tools/formParser.js';
 
 const list = [];
 
@@ -21,6 +22,7 @@ const list = [];
 
 function App() {
   const [data, setData] = useState([])
+  radioParser()
 
   return (
     <div id="app" className='ml-25 mr-25 flex flex-col h-screen'>
