@@ -1,0 +1,25 @@
+{
+  "short_name": "Meet Together",
+  "name": "Project for the DubHacks 2023 Hackathon.",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "128x128 64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "meet-together.png",
+      "type": "image/png",
+      "sizes": "1000x1000"
+    },
+    {
+      "src": "me2-favicon.png",
+      "type": "image/png",
+      "sizes": "1000x1000"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
