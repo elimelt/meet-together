@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { ReactSortable } from "react-sortablejs";
-import { active } from "sortablejs";
 import { Link } from 'react-router-dom';
 
 const group = () => {
@@ -16,13 +15,47 @@ export const Sort = (props) => {
   const [data, setData] = useState(list);
   const [loading, setLoading] = useState(false);
 
-  let lastActive = data.length;
+  const findLastActive = () => {
+    let i = 0;
+    while (data[i].active) i++;
+    return i;
+  }
+
+  const activate = i => {
+    let firstInactiveIdx = findLastActive();
+    const act = data.slice(0, firstInactiveIdx)
+
+    const inact = [
+        ...data.slice(firstInactiveIdx, i),
+        ...data.slice(i + 1, data.length)
+    ];
+
+    const updated = data[i];
+    updated.active = true;
+
+    const newArray = [
+        ...act,
+        updated,
+        ...inact
+    ]
+
+    setData(newArray);
+  }
+
+  const deactivate = i => {
+    const newArray = [
+        ...data.slice(0, i), 
+        ...data.slice(i + 1, data.length),
+        data[i]
+    ];
+
+    newArray[newArray.length - 1].active = false;
+
+    setData(newArray);
+  }
 
   const toggle = i => {
-    const newActiveArray = [...data];
-    newActiveArray[i].active = !newActiveArray[i].active;
-    // const element = arr.splice(index, 1)[0];
-    //arr.push(element);
+    data[i].active ? deactivate(i) : activate(i);
   }
 
   useEffect(() => {
@@ -41,7 +74,7 @@ export const Sort = (props) => {
           </Link>
         </div>
       </div>
-      <ReactSortable className="flex flex-col flex-wrap items-center" list={data} setList={setData}>
+      <ReactSortable className="flex flex-col flex-wrap items-center" list={data} setList={setData} >
         {data.map((item, i) => {
           let activeClass;
           if (item.active) { activeClass = ' active'}
