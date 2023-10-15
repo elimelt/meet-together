@@ -65,7 +65,7 @@ export const Sort = (props) => {
     <div id="fields" className="">
       <div className="flex items-center">
         <p className="m-5 ml-28 text-3xl text-center flex-1">
-          Drag & drop to rank the fields.
+          Drag and drop your different fields <em>(rank them)</em>
         </p>
         <div className="ml-auto">
           <Link to="/groups">
