@@ -7,30 +7,19 @@ import { About } from './About.js';
 import { Sort } from './FieldsPage.js';
 import { Groups } from './Groups.js';
 
-const list = [];
-
-// [
-//   { id: 1, name: 'elijah', active: true},
-//   { id: 2, name: 'sriya', active: true},
-//   { id: 3, name: 'rasmus', active: true},
-//   { id: 4, name: 'simon', active: true},
-//   { id: 5, name: 'max', active: true},
-//   { id: 6, name: 'bella', active: true},
-//   { id: 7, name: 'turner', active: true}
-// ];
-
 function App() {
-  const [data, setData] = useState([])
+  const [formData, setFormData] = useState([])
+  const [responseData, setResponseData] = useState([])
 
   return (
     <div id="app" className='ml-25 mr-25 flex flex-col h-screen'>
       <BrowserRouter>
-        <Header setData={setData}/>
+        <Header setFormData={setFormData}/>
         <Routes>
-          <Route path="/" element={<FormInput setData={setData} />} />
+          <Route path="/" element={<FormInput setFormData={setFormData} setResponseData={setResponseData} />} />
           <Route path="/about" element={<About />} />
-          <Route path='/fields' element={<Sort data={data} setData={setData} />} />
-          <Route path='/groups' element={<Groups />} />
+          <Route path='/fields' element={<Sort formData={formData} setFormData={setFormData} />} />
+          <Route path='/groups' element={<Groups responseData={responseData} />} />
         </Routes>
         <Footer />
       </BrowserRouter>
