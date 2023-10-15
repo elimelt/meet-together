@@ -3,10 +3,14 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap');
 
-#header img {
-  height: 64px;
-}
-
 body {
   font-family: 'Barlow', sans-serif;
+}
+
+#app > div {
+  min-width: 500px;
+}
+
+#app hr {
+  min-width: 500px;
 }

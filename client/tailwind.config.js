@@ -22,6 +22,11 @@ module.exports = {
       },
       borderWidth: {
         '5': '0.15rem'
+      },
+      colors: {
+        'primary': '#FFFFFF',
+        'secondary': '#E8E8E8',
+        'third': '#1E1E1E'
       }
     },
   },
