@@ -1,31 +1,94 @@
-const formID = '1COaD0aW1PwPEj2tW4QtQ_IRY3JPK0kc5BulEK8GjADk';
-
-async function runSample() {
-    const accessToken = 'ya29.a0AfB_byCHsMKcmvCEIBFRk8CNCFJUWMQa-xaFvMTxAHkSXTdYzXQBjgZq-EhVjtJn4v4YZKUZ-OELOe8HIpNQa46GLKIHEa2cSJ4heSdyQg91lJ7QoiJSUiwRuflKb2CZXv7obF6Kcslred_uTYj8zcFNN6p6tPjsX76MaCgYKATgSARESFQGOcNnCnP1cKiOQTp0ilZPM4dT7Rw0171';
-
-// URL of the Google Sheets API endpoint you want to access
-    const apiUrl = 'https://forms.googleapis.com/v1/forms/' + formID;
-
-    // SPREADSHEET_ID: The ID of your Google Spreadsheet
-    // RANGE: The range of cells you want to access, e.g., 'Sheet1!A1:B2'
-
-    // Make a GET request to the Google Sheets API
-    fetch(apiUrl, {
-        method: 'GET',
+// Define a function to fetch form metadata
+async function getFormMetadata(formID) {
+    const accessToken = "ya29.a0AfB_byAmDHllCGUVSIB35KyhYzwr8aLSDP6MjQZBYSje59jYXGwYfl5HS5d4mBt6FkgQCD5aF1hd5Xhk_brgBmqTCqjOCMn11BMBaLF5G3OJXX1U4-3eROaWTz5NQg69KA6pxF9LPRvc3QIHU8NguXBir8yeaUGi6J90aCgYKAYsSARESFQGOcNnC9xxvhVpHxk18zFTieJjo-Q0171"; // Replace with your actual access token
+    const apiUrl = `https://forms.googleapis.com/v1/forms/${formID}`;
+  
+    try {
+      const response = await fetch(apiUrl, {
+        method: "GET",
         headers: {
-            'Authorization': `Bearer ${accessToken}`
-        }
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error:", error);
+      throw error;
+    }
+  }
+  
+  // Define a function to fetch form responses
+  async function getFormResponses(formID) {
+    const accessToken = "ya29.a0AfB_byAmDHllCGUVSIB35KyhYzwr8aLSDP6MjQZBYSje59jYXGwYfl5HS5d4mBt6FkgQCD5aF1hd5Xhk_brgBmqTCqjOCMn11BMBaLF5G3OJXX1U4-3eROaWTz5NQg69KA6pxF9LPRvc3QIHU8NguXBir8yeaUGi6J90aCgYKAYsSARESFQGOcNnC9xxvhVpHxk18zFTieJjo-Q0171"; // Replace with your actual access token
+    const apiUrl = `https://forms.googleapis.com/v1/forms/${formID}/responses`;
+  
+    try {
+      const response = await fetch(apiUrl, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error:", error);
+      throw error;
+    }
+  }
+  
+  const formID = "1COaD0aW1PwPEj2tW4QtQ_IRY3JPK0kc5BulEK8GjADk";
+  
+  // Fetch form metadata and responses concurrently using Promise.all
+  Promise.all([getFormMetadata(formID), getFormResponses(formID)])
+    .then(([metadata, formData]) => {
+      // Process metadata
+      const processedMetadata = metadata.items.map((question) => {
+        console.log(
+          JSON.stringify(
+            (
+              question &&
+              question.questionItem &&
+              question.questionItem.question &&
+              question.questionItem.question.choiceQuestion &&
+              question.questionItem.question.choiceQuestion.options
+            )
+          )
+        );
+        return {
+          title: question.title || "",
+          type: (
+            question.questionItem &&
+            question.questionItem.question &&
+            question.questionItem.question.choiceQuestion &&
+            question.questionItem.question.choiceQuestion.type
+          ) || "",
+          options: (
+            (question.questionItem &&
+              question.questionItem.question &&
+              question.questionItem.question.choiceQuestion &&
+              question.questionItem.question.choiceQuestion.options) || []
+          ).map((e) => e.value),
+        };
+      });
+  
+      // Log the processed metadata and form data
+      console.log("Meta Data:", processedMetadata);
+      console.log("Form Data:", formData);
     })
-    .then(response => response.json())
-    .then(data => {
-        // Handle the API response data here
-        console.log(data);
-    })
-    .catch(error => {
-        // Handle errors here
-        console.error('Error:', error);
+    .catch((error) => {
+      // Handle errors here
+      console.error("Error:", error);
     });
-
-}
-
-runSample();
+  
