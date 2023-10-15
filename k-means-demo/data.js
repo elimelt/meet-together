@@ -1,4 +1,37 @@
-function generateRandomData (count) {
+function generateParsedData (count, numFeatures, featLength) {
+    const featLengths = []
+
+    for (let i = 0; i < numFeatures; i++)
+        featLengths.push(featLength !== undefined
+            ? featLength
+            : Math.floor(Math.random() * 10) + 1);
+
+    const data = [];
+
+    const makeEntry = (id) => {
+        const entry = [];
+
+        for (let i = 0; i < numFeatures; i++) {
+            const feat = [];
+            for (let j = 0; j < featLengths[i]; j++) {
+                feat.push(Math.floor(Math.random() * 10) + 1);
+            }
+            entry.push(feat);
+        }
+        return { id: id, val: entry };
+    }
+
+    for (let i = 0; i < count; i++) {
+        data.push(makeEntry(i));
+    }
+
+    return data;
+
+}
+
+
+
+function generateFormData (count) {
   const data = []
   const names = [
     'Alice',
@@ -38,4 +71,4 @@ function generateRandomData (count) {
   return data
 }
 
-module.exports = { data: generateRandomData(3) }
+module.exports = { generateFormData, generateParsedData }
