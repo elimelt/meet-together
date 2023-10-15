@@ -14,3 +14,14 @@ body {
 #app hr {
   min-width: 500px;
 }
+
+.active {
+  color: #485340;
+  background-color: #dcf5cb;
+}
+
+.inactive {
+  color: #acacac;
+  background-color: #727272;
+
+}
