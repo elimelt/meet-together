@@ -6,7 +6,7 @@ import {
   processedMetadata as processMetadata
  } from './tools/form.js';
 
-const getFormID = async (setFormData) => {
+const getFormID = async (setFormData, setResponseData) => {
   const url = document.getElementById('input').value;
 
   // Using regular expression to extract the form ID
@@ -24,13 +24,14 @@ const getFormID = async (setFormData) => {
       return newElement;
     })
     setFormData(newMetadata);
+    setResponseData(responses);
   } else {
     console.log("Form ID not found in the URL.");
   }
 }
 
 export const FormInput = (props) => {
-  const { setFormData } = props;
+  const { setFormData, setResponseData } = props;
   return (
     <div>
       <h1 className='text-4xl text-center m-5 mb-5 mt-16 font-bold'>INPUT YOUR FORM</h1>
@@ -38,7 +39,7 @@ export const FormInput = (props) => {
       <div className="bg-secondary w-3/5 h-20 m-auto flex flex-row items-center">
         <input id='input' className="border-radius-1 w-full text-lg ml-5 focus:outline-none bg-gradient-to-r from-black via-black via-black via-black to-secondary text-transparent bg-clip-text" type="text" placeholder="link here..."></input>
         <Link className='h-full' to="/fields">
-          <button onClick={() => { getFormID(setFormData) }} className="pl-5 pr-5 h-full hover:bg-darker transition duration-50 ease-in-out" type="button">Submit</button>
+          <button onClick={() => { getFormID(setFormData, setResponseData) }} className="pl-5 pr-5 h-full hover:bg-darker transition duration-50 ease-in-out" type="button">Submit</button>
         </Link>
       </div>
     </div>
