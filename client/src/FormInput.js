@@ -21,6 +21,7 @@ const getFormID = async (setFormData, setResponseData) => {
     const newMetadata = metadata.map((element) => {
       const newElement = { ...element }
       newElement.active = true;
+      newElement.weight = 0;
       return newElement;
     })
     setFormData(newMetadata);
