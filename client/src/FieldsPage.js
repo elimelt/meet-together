@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { ReactSortable } from "react-sortablejs";
-import './App.css'
 
 
-export default function App(props) {
+export default function Sort(props) {
   const [data, setData] = useState([
     { id: 1, name: 'elijah', active: true},
-    { id: 2, name: 'sriya', active: true}
+    { id: 2, name: 'sriya', active: true},
+    { id: 3, name: 'rasmus', active: true},
+    { id: 4, name: 'simon', active: true},
   ]);
   const [loading, setLoading] = useState(false);
 
+   let lastActive = data.length;
+
   const toggle = i => {
     const newActiveArray = [...data];
-    newActiveArray[i].active = !newActiveArray[i].active;
+    newActiveArray[i].active 
+    // const element = arr.splice(index, 1)[0];
+    //arr.push(element);
   }
 
   useEffect(() => {
@@ -29,15 +34,15 @@ export default function App(props) {
           {data.map((item, i) => {
             if (item.active) {
               return (
-              <div className= "active" key={item.id}>
+              <div className="flex w-1/2 active" key={item.id}>
                 <p>{item.name}</p>
-                <button onClick={() => toggle(i)}></button>
+                <button className="active w-14 h-14 text-center text-sm border-0" onClick={() => toggle(i)}>×</button>
               </div>
               )
             } else {
-              return (<div className="inactive" key={item.id}>
+              return (<div className="flex inactive" key={item.id}>
                 <p>{item.name}</p>
-                <button onClick={() => toggle(i)}></button>
+                <button className="inactive w-14 h-14 text-center text-sm border-0" onClick={() => toggle(i)}>×</button>
                 </div>)
             }
           })}
