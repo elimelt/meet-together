@@ -11,8 +11,7 @@ const group = () => {
 }
 
 export const Sort = (props) => {
-  const { list } = props;
-  const [data, setData] = useState(list);
+  const { data, setData } = props;
   const [loading, setLoading] = useState(false);
 
   const findLastActive = () => {
@@ -74,14 +73,25 @@ export const Sort = (props) => {
           </Link>
         </div>
       </div>
-      <ReactSortable className="flex flex-col flex-wrap items-center" list={data} setList={setData} >
+    
+      {/* if data is loading, show loading text */}
+      {(data.length !== 0) ? <></> :
+        <div className="flex justify-center">
+          <p className="mt-16 text-3xl animate-dots">
+            Loading
+          </p>
+        </div>
+      }
+
+      <ReactSortable className="flex flex-col flex-wrap items-center" list={data} setList={setData}>
+
         {data.map((item, i) => {
           let activeClass;
           if (item.active) { activeClass = ' active'}
           else { activeClass = ' inactive' }
           return (
-            <div className={"flex m-3 items-center w-1/4 " + activeClass} key={item.id}>
-              <p className="ml-5">{item.name}</p>
+            <div className={"flex m-3 items-center w-1/4 " + activeClass} key={i}>
+              <p className="ml-5">{item.title}</p>
               <button className="ml-auto w-14 h-14 text-center text-3xl border-0" onClick={() => toggle(i)}>×</button>
             </div>)
         })}
