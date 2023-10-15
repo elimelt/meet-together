@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ReactSortable } from "react-sortablejs";
 
 
-export default function Sort(props) {
+export const Sort = (props) => {
   const [data, setData] = useState([
     { id: 1, name: 'elijah', active: true},
     { id: 2, name: 'sriya', active: true},
@@ -11,11 +11,11 @@ export default function Sort(props) {
   ]);
   const [loading, setLoading] = useState(false);
 
-   let lastActive = data.length;
+  let lastActive = data.length;
 
   const toggle = i => {
     const newActiveArray = [...data];
-    newActiveArray[i].active 
+    newActiveArray[i].active = !newActiveArray[i].active;
     // const element = arr.splice(index, 1)[0];
     //arr.push(element);
   }
