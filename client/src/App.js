@@ -14,7 +14,7 @@ function App() {
   return (
     <div id="app" className='ml-25 mr-25 flex flex-col h-screen'>
       <BrowserRouter>
-        <Header setFormData={setFormData}/>
+        <Header setResponseData={setResponseData} setFormData={setFormData}/>
         <Routes>
           <Route path="/" element={<FormInput setFormData={setFormData} setResponseData={setResponseData} />} />
           <Route path="/about" element={<About />} />
