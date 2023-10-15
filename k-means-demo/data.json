@@ -1,0 +1,328 @@
+{
+    "responses": [
+        {
+            "responseId": "ACYDBNhVblns0edCUaT2U67BUy1SdoloSUclNd0dd02G-enwVjaJEV-gBdejQCmIcOrcU2E",
+            "createTime": "2023-10-15T10:43:35.796Z",
+            "lastSubmittedTime": "2023-10-15T10:43:35.796904Z",
+            "respondentEmail": "email1@gmail.com",
+            "answers": {
+                "7c362a68": {
+                    "questionId": "7c362a68",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Option 1"
+                            },
+                            {
+                                "value": "Option 3"
+                            }
+                        ]
+                    }
+                },
+                "1aa722d9": {
+                    "questionId": "1aa722d9",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Column 1"
+                            }
+                        ]
+                    }
+                },
+                "0b3acb0d": {
+                    "questionId": "0b3acb0d",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Column 1"
+                            }
+                        ]
+                    }
+                },
+                "026eea3b": {
+                    "questionId": "026eea3b",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Column 2"
+                            }
+                        ]
+                    }
+                },
+                "5201372a": {
+                    "questionId": "5201372a",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Option 1"
+                            }
+                        ]
+                    }
+                },
+                "5bf20ff2": {
+                    "questionId": "5bf20ff2",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Option 1"
+                            }
+                        ]
+                    }
+                },
+                "5ab2d0f6": {
+                    "questionId": "5ab2d0f6",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Column 1"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "responseId": "ACYDBNj14Fwys72HYurD-BfJJfwnwpdkw3Ba8i7OxgB-e8TZegbWa9WWWz7f8qGg2LoD-hI",
+            "createTime": "2023-10-15T10:44:14.898Z",
+            "lastSubmittedTime": "2023-10-15T10:44:14.898546Z",
+            "respondentEmail": "email3@gmail.com",
+            "answers": {
+                "7c362a68": {
+                    "questionId": "7c362a68",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Option 2"
+                            },
+                            {
+                                "value": "Option 3"
+                            },
+                            {
+                                "value": "Option 4"
+                            }
+                        ]
+                    }
+                },
+                "1aa722d9": {
+                    "questionId": "1aa722d9",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Column 1"
+                            }
+                        ]
+                    }
+                },
+                "0b3acb0d": {
+                    "questionId": "0b3acb0d",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Column 3"
+                            }
+                        ]
+                    }
+                },
+                "026eea3b": {
+                    "questionId": "026eea3b",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Column 4"
+                            }
+                        ]
+                    }
+                },
+                "5201372a": {
+                    "questionId": "5201372a",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Option 4"
+                            }
+                        ]
+                    }
+                },
+                "5bf20ff2": {
+                    "questionId": "5bf20ff2",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Option 5"
+                            }
+                        ]
+                    }
+                },
+                "5ab2d0f6": {
+                    "questionId": "5ab2d0f6",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Column 4"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "responseId": "ACYDBNinMZgEg2suAbQ2icrgpTTtJXt8oGvZYe0n53rFgi0m4RuNZl2-6IgjPEaB1_E6oUI",
+            "createTime": "2023-10-15T10:43:54.447Z",
+            "lastSubmittedTime": "2023-10-15T10:43:54.447700Z",
+            "respondentEmail": "email2@gmail.com",
+            "answers": {
+                "7c362a68": {
+                    "questionId": "7c362a68",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Option 2"
+                            },
+                            {
+                                "value": "Option 3"
+                            }
+                        ]
+                    }
+                },
+                "1aa722d9": {
+                    "questionId": "1aa722d9",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Column 3"
+                            }
+                        ]
+                    }
+                },
+                "0b3acb0d": {
+                    "questionId": "0b3acb0d",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Column 1"
+                            }
+                        ]
+                    }
+                },
+                "026eea3b": {
+                    "questionId": "026eea3b",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Column 4"
+                            }
+                        ]
+                    }
+                },
+                "5201372a": {
+                    "questionId": "5201372a",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Option 3"
+                            }
+                        ]
+                    }
+                },
+                "5bf20ff2": {
+                    "questionId": "5bf20ff2",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Option 3"
+                            }
+                        ]
+                    }
+                },
+                "5ab2d0f6": {
+                    "questionId": "5ab2d0f6",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Column 2"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "responseId": "ACYDBNiALusymZoBuMlz9Cl7P85Ay3OBKG7VTUlmmxT5hOdmcm3-dd6lQTn_LgIJNUkYf10",
+            "createTime": "2023-10-15T10:44:40.510Z",
+            "lastSubmittedTime": "2023-10-15T10:44:40.510130Z",
+            "respondentEmail": "email4@gmail.com",
+            "answers": {
+                "7c362a68": {
+                    "questionId": "7c362a68",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Option 3"
+                            }
+                        ]
+                    }
+                },
+                "1aa722d9": {
+                    "questionId": "1aa722d9",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Column 3"
+                            }
+                        ]
+                    }
+                },
+                "0b3acb0d": {
+                    "questionId": "0b3acb0d",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Column 1"
+                            }
+                        ]
+                    }
+                },
+                "026eea3b": {
+                    "questionId": "026eea3b",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Column 2"
+                            }
+                        ]
+                    }
+                },
+                "5201372a": {
+                    "questionId": "5201372a",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Option 1"
+                            }
+                        ]
+                    }
+                },
+                "5bf20ff2": {
+                    "questionId": "5bf20ff2",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Option 3"
+                            }
+                        ]
+                    }
+                },
+                "5ab2d0f6": {
+                    "questionId": "5ab2d0f6",
+                    "textAnswers": {
+                        "answers": [
+                            {
+                                "value": "Column 2"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}
