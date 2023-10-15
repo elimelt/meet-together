@@ -21,12 +21,13 @@ const list = [];
 
 function App() {
   const [data, setData] = useState([])
+
   return (
     <div id="app" className='ml-25 mr-25 flex flex-col h-screen'>
       <BrowserRouter>
-        <Header />
+        <Header setData={setData}/>
         <Routes>
-          <Route path="/" element={<FormInput />} />
+          <Route path="/" element={<FormInput setData={setData} />} />
           <Route path="/about" element={<About />} />
           <Route path='/fields' element={<Sort data={data} setData={setData} />} />
           <Route path='/groups' element={<Groups />} />

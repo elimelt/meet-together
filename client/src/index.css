@@ -23,5 +23,26 @@ body {
 .inactive {
   color: #acacac;
   background-color: #727272;
+}
 
+@keyframes dotAnimation {
+  0%, 100% {
+    content: '...';
+  }
+  75% {
+    content: '.. ';
+  }
+  50% {
+    content: '.  ';
+  }
+  25% {
+    content: '   ';
+  }
+}
+
+.animate-dots::after {
+  content: '...';
+  animation: dotAnimation 1s steps(4) infinite;
+  display: inline-block;
+  width: 1em; /* Adjust as needed */
 }
