@@ -1,7 +1,5 @@
-# Created at Dubhacks (2023)
-
 ## Inspiration
-We were inspired mainly by Motion.com. Seeing how algorithms could piece together schedules, and more importantly clearly display important information gave us the idea to attempt to improve how we organize and group people together. From walking into a new classroom to forming project groups, shared interests and values are important pieces of data that can help us make better predictions as to compatible members and ideas.
+We were inspired mainly by When2meet. Seeing how technology could be used to piece together schedules, and more importantly clearly display important information gave us the idea to attempt to improve how we organize and group people together. From walking into a new classroom to forming project groups, shared interests and values are important pieces of data that can help us make better predictions as to compatible members and ideas.
 
 ## What it does
 Meet Together leverages data from Google Forms and customizable surveys to streamline the process of organizing events and groups. By utilizing this data, it saves valuable time for organizers and users while boosting productivity.
@@ -24,7 +22,7 @@ Algorithm Development: We honed our skills in creating algorithms for matching i
 
 User Experience: We learned the importance of designing a user-centric interface for optimal user engagement. We now recognize that a well-designed user interface is essential for user satisfaction and the success of the platform.
 
-What's next for Meet Together
+## What's next for Meet Together
 The future for Meet Together is promising, and we have several exciting plans in store:
 
 We want to fully implement our algorithm to make the process of selecting groups a flawless experience for both the organizers and the users.
