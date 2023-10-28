@@ -1,3 +1,7 @@
+# Meet Together
+
+![](https://github.com/elimelt/meet-together/meet-together-demo.gif)
+
 ## Inspiration
 We were inspired mainly by When2meet. Seeing how technology could be used to piece together schedules, and more importantly connect people, gave us the idea to attempt to improve how we organize and group people together. From walking into a new classroom to forming project groups, shared interests and values are important pieces of data that can help us make better predictions as to compatible members and ideas.
 
